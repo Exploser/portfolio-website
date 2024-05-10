@@ -30,34 +30,36 @@ export const Skills = () => {
 
       return (
         <section className="skill" id="skills">
-            <Container>
-                <Col>
-                    <div className="skill-box">
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
+                    <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>Again doing a typing test to test my typing speed, cause for some weird reasons my lorem ipsum isn't working as it should and honestly, I don't know how to fix and I am not doing it right now.</p>
-                        <Carousel responsive={responsive} infinite={true} className="skills-slider">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="image" />
-                                <h5>Skill 1</h5>
+                                <img src={meter1} alt="Image" />
+                                <h5>Web Development</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="image" />
-                                <h5>Skill 2</h5>
+                                <img src={meter2} alt="Image" />
+                                <h5>Brand Identity</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="image" />
-                                <h5>Skill 3</h5>
+                                <img src={meter3} alt="Image" />
+                                <h5>Logo Design</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="image" />
-                                <h5>Skill 4</h5>
+                                <img src={meter1} alt="Image" />
+                                <h5>Web Development</h5>
                             </div>
                         </Carousel>
                     </div>
-                </Col>
-            </Container>
-            <img className="background-image-left" src = {colorSharp} />
-        </section>
+                </div>
+            </div>
+        </div>
+        <img className="background-image-left" src={colorSharp} alt="Background Image" />
+    </section>
       )
 
 }
