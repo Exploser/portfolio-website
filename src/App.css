@@ -1,28 +1,28 @@
+/************ Custom Font ************/
 @font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Bold.ttf');
-  font-weight: 700;
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Bold.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Medium.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Book.ttf');
+	font-weight: 400;
 }
 
-@font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Medium.ttf');
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: Centra;
-  src: url('./assets/font/CentraNo2-Book.ttf');
-  font-weight: 400;
-}
-
-*{
+/************ Default Css ************/
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html{
+html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
 }
@@ -32,7 +32,7 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: #121212 !important;
-  color: #fff;
+  color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
 
@@ -42,32 +42,45 @@ h1, h2, h3, h4, h5, h6 {
   line-height: normal;
 }
 
-.App {
-  text-align: center;
+p, a, li, button, ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:hover {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  width: 100%;
+  height: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+  border: 0;
+  background-color: transparent;
 }
 
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+@media (min-width:1700px) {
+	main .container {
+		max-width: 100%;
+		padding: 0 150px;
+	}
+}
+
+p.success {
+	color: green;
+}
+
+p.danger {
+	color: red;
+}
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
@@ -217,19 +230,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -264,20 +264,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1.5em;
   width: 96%;
 }
-.banner div#button-box{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  align-content: center;
-}
 .banner button {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
+  margin-top: 60px;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
-  align-self: auto;
 }
 .banner button svg {
   font-size: 25px;
@@ -366,17 +360,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
   width: 56%;
 }
-.project .nav.nav-tabs {
+.project .nav.nav-pills {
   width: 72%;
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
 }
-.project .nav.nav-tabs .nav-item {
+.project .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
-.project .nav.nav-tabs .nav-link {
+.project .nav.nav-pills .nav-link {
   background-color: transparent;
   border-radius: 0;
   padding: 17px 0;
@@ -390,7 +384,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-align: center;
   z-index: 0;
 }
-.project .nav.nav-tabs .nav-link::before {
+.project .nav.nav-pills .nav-link::before {
     content: "";
     position: absolute;
     width: 0;
@@ -401,21 +395,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     z-index: -1;
     transition: 0.3s ease-in-out;
 }
-.project .nav.nav-tabs .nav-link.active::before {
+.project .nav.nav-pills .nav-link.active::before {
     width: 100% !important;
 }
-.project .nav.nav-tabs .nav-link.active {
+.project .nav.nav-pills .nav-link.active {
     border: 1px solid rgba(255, 255, 255, 1);
 }
 .nav-link#projects-tabs-tab-projects-1 {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 55px 0px 0px 55px;
 }
-.nav-link#projects-tabs-tab-second-projects-2 {
+.nav-link#projects-tabs-tab-projects-2 {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
-.nav-link#projects-tabs-tab-third-projects-3 {
+.nav-link#projects-tabs-tab-projects-3 {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0 55px 55px 0;
 }

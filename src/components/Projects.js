@@ -47,8 +47,8 @@ export const Projects = () => {
                     <Col>
                         <h2>Projects</h2>
                         <p>This is another typing test cause my Lorem aint working can't be bother to fix it sory I will fix it when I am done with the project I promise. ;)</p>
-                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                        <Nav variant="tabs" defaultActiveKey="projects-1" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                        <Tab.Container id="projects-tabs" defaultActiveKey="projects-1">
+                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                             <Nav.Item>
                                 <Nav.Link eventKey="projects-1">Projects 1</Nav.Link>
                             </Nav.Item>
