@@ -21,9 +21,38 @@ export const Contact = () => {
         });
     };
 
-    const handleSubmit = () => {
-        
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setButtonText('Sending...');
+        try {
+            let response = await fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "Application/json;charset=utf-8",
+                },
+                body: JSON.stringify(formDetails),
+            });
+    
+            // Wait for the JSON response to resolve
+            let result = await response.json(); // Add await here
+    
+            setButtonText("Send");
+            setFormDetails(formInitialDetails); // Reset form details
+    
+            // Check the result code
+            if (result.code === 200) {
+                setStatus({ success: true, message: 'Message sent successfully'});
+            } else {
+                setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+            }
+        } catch (error) {
+            // Handle any errors that occur during the fetch
+            console.error('Fetch error:', error);
+            setButtonText("Send");
+            setStatus({ success: false, message: 'Failed to send message. Please try again later.'});
+        }
+    };
+    
 
     return (
         <section className="contact" id="connect">
