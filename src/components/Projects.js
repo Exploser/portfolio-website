@@ -4,6 +4,7 @@ import projImg2 from "../assets/img/project-img2.png"
 import projImg3 from "../assets/img/project-img3.png"
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png"
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
 
@@ -45,59 +46,66 @@ export const Projects = () => {
             <Container>
                 <Row>
                     <Col>
-                        <h2>Projects</h2>
-                        <p>This is another typing test cause my Lorem aint working can't be bother to fix it sory I will fix it when I am done with the project I promise. ;)</p>
-                        <Tab.Container id="projects-tabs" defaultActiveKey="projects-1">
-                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                            <Nav.Item>
-                                <Nav.Link eventKey="projects-1">Projects 1</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="projects-2">Projects 2</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="projects-3">Projects 3</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                        <Tab.Content>
-                            <Tab.Pane eventKey="projects-1">
-                                <Row>
-                                    {
-                                        projects.map((projects, index) => {
-                                            return(
-                                                <ProjectCard
-                                                key={index}
-                                                {...projects}
-                                                />
-                                            );
-                                        })
-                                    }
-                                </Row>
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="projects-2">
-                                <Row>
-                                    {
-                                        projects.map((projects, index) => {
-                                            return(
-                                                <p>{projects.title}</p>
-                                            );
-                                        })
-                                    }
-                                </Row>
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="projects-3">
-                                <Row>
-                                    {
-                                        projects.map((projects, index) => {
-                                            return(
-                                                <p>{projects.title}</p>
-                                            );
-                                        })
-                                    }
-                                </Row>
-                            </Tab.Pane>
-                        </Tab.Content>
-                        </Tab.Container>
+                        <TrackVisibility partialVisibility>
+                            {({ isVisible }) =>
+                                <div className={isVisible ? 'animate__animated animate__bounce' : ""}>
+                                    <h2>Projects</h2>
+                                    <p>This is another typing test cause my Lorem aint working can't be bother to fix it sory I will fix it when I am done with the project I promise. ;)</p>
+                                </div>
+                            }
+                        </TrackVisibility>
+                                    <Tab.Container id="projects-tabs" defaultActiveKey="projects-1">
+                                        <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="projects-1">Projects 1</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="projects-2">Projects 2</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="projects-3">Projects 3</Nav.Link>
+                                            </Nav.Item>
+                                        </Nav>
+                                        <Tab.Content>
+                                            <Tab.Pane eventKey="projects-1">
+                                                <Row>
+                                                    {
+                                                        projects.map((projects, index) => {
+                                                            return (
+                                                                <ProjectCard
+                                                                    key={index}
+                                                                    {...projects}
+                                                                />
+                                                            );
+                                                        })
+                                                    }
+                                                </Row>
+                                            </Tab.Pane>
+                                            <Tab.Pane eventKey="projects-2">
+                                                <Row>
+                                                    {
+                                                        projects.map((projects, index) => {
+                                                            return (
+                                                                <p>{projects.title}</p>
+                                                            );
+                                                        })
+                                                    }
+                                                </Row>
+                                            </Tab.Pane>
+                                            <Tab.Pane eventKey="projects-3">
+                                                <Row>
+                                                    {
+                                                        projects.map((projects, index) => {
+                                                            return (
+                                                                <p>{projects.title}</p>
+                                                            );
+                                                        })
+                                                    }
+                                                </Row>
+                                            </Tab.Pane>
+                                        </Tab.Content>
+                                    </Tab.Container>
+                                
                     </Col>
                 </Row>
             </Container>
