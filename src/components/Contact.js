@@ -77,16 +77,17 @@ export const Contact = () => {
                                 <Col sm={6} className="px-1">
                                     <input type="tel" value={formDetails.tel} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
-                                <Col>
+                                <Col sm={12} className="px-1">
                                     <textarea row="6" value={formDetails.message} placeholder="message" onChange={(e) => onFormUpdate('message', e.target.value)} />
-                                    <button type="submit"><span>{buttonText}</span></button>
-                                </Col>
-                                {
+                                    {
                                     status.message &&
-                                    <Col>
+                                    <Col sm={6} className="px-1">
                                         <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
                                     </Col>
-                                }
+                                    }
+                                    <button type="submit"><span>{buttonText}</span></button>
+                                </Col>
+                                
                             </Row>
                         </form>
                     </Col>
