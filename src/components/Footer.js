@@ -18,8 +18,8 @@ export const Footer = () => {
                             <a href="https://github.com/Exploser"><img src={githubIcon} alt="" /></a>
                             <a href="https://thangs.com/designer/Expl0ser"><img src={thangsIcon} id="thangs-logo" alt="" /></a>
                         </div>
-                        <p>Footer Text. It's me</p>
                     </Col>
+                        <p>Footer Text. It's me</p>
                 </Row>
             </Container>
         </footer>

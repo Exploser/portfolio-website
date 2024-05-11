@@ -8,7 +8,7 @@ import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
 
-    const projects = [
+    const webProjects = [
         {
             title: "Tweets Scheduler1",
             description: "A simple web-app to schedule your tweets",
@@ -41,6 +41,29 @@ export const Projects = () => {
         },
     ];
 
+    const otherProjects = [
+        {
+            title: "Tweets Scheduler1",
+            description: "A simple web-app to schedule your tweets",
+            builtWith: "Ruby on Rails and Bootstrap.",
+            imgUrl:projImg1,
+        },
+        {
+            title: "Tweets Scheduler2",
+            description: "A simple web-app to schedule your tweets",
+            builtWith: "Ruby on Rails and Bootstrap.",
+            imgUrl:projImg2,
+        },
+    ]
+
+    const modelProjects = [
+        {
+            title: "Keep it UP!",
+            description: "Keyboard wallmount stand, no screws and no hassel",
+            imgUrl:projImg2,
+        }
+    ]
+
     return (
         <section className="project" id="project">
             <Container>
@@ -57,20 +80,20 @@ export const Projects = () => {
                                     <Tab.Container id="projects-tabs" defaultActiveKey="projects-1">
                                         <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                             <Nav.Item>
-                                                <Nav.Link eventKey="projects-1">Projects 1</Nav.Link>
+                                                <Nav.Link eventKey="projects-1">Web Projects</Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="projects-2">Projects 2</Nav.Link>
+                                                <Nav.Link eventKey="projects-2">Other Projects</Nav.Link>
                                             </Nav.Item>
                                             <Nav.Item>
-                                                <Nav.Link eventKey="projects-3">Projects 3</Nav.Link>
+                                                <Nav.Link eventKey="projects-3">3D Models</Nav.Link>
                                             </Nav.Item>
                                         </Nav>
                                         <Tab.Content>
                                             <Tab.Pane eventKey="projects-1">
                                                 <Row>
                                                     {
-                                                        projects.map((projects, index) => {
+                                                        webProjects.map((projects, index) => {
                                                             return (
                                                                 <ProjectCard
                                                                     key={index}
@@ -84,9 +107,12 @@ export const Projects = () => {
                                             <Tab.Pane eventKey="projects-2">
                                                 <Row>
                                                     {
-                                                        projects.map((projects, index) => {
+                                                        otherProjects.map((projects, index) => {
                                                             return (
-                                                                <p>{projects.title}</p>
+                                                                <ProjectCard
+                                                                    key={index}
+                                                                    {...projects}
+                                                                />
                                                             );
                                                         })
                                                     }
@@ -95,9 +121,12 @@ export const Projects = () => {
                                             <Tab.Pane eventKey="projects-3">
                                                 <Row>
                                                     {
-                                                        projects.map((projects, index) => {
+                                                        modelProjects.map((projects, index) => {
                                                             return (
-                                                                <p>{projects.title}</p>
+                                                                <ProjectCard
+                                                                    key={index}
+                                                                    {...projects}
+                                                                />
                                                             );
                                                         })
                                                     }
