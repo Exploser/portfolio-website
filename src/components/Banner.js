@@ -1,59 +1,72 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+
+import headerImg1 from "../assets/img/header-img1.svg";
+import headerImg2 from "../assets/img/header-img2.svg";
+import headerImg3 from "../assets/img/header-img3.svg";
+
 import { useEffect, useState } from "react";
 import "animate.css";
 import TrackVisibility from 'react-on-screen';
+
+const roleImages = {
+    "Web Developer": headerImg1,
+    "Software Engineer": headerImg2,
+    "Frontend Engineer": headerImg3,
+};
 
 
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = [ "Web Developer", "Software Engineer", "Frontend Engineer"];
     const [text, setText] = useState('');
-    const [delta, setDelta] = useState(300 - Math.random() * 3);
+    const [delta, setDelta] = useState(100);
     const period = 2000;
+    const [headerImg, setHeaderImg] = useState(roleImages["Web Developer"]); // Initialize with the first role image
 
     useEffect(() => {
-        let ticker = setInterval(() => {
-            tick();
-        }, delta)
+        const toRotate = Object.keys(roleImages); // Get roles from the roleImages object
+        const handleTyping = () => {
+            const currentWord = toRotate[loopNum % toRotate.length];
+            const currentLength = text.length;
+            const isFull = currentLength === currentWord.length;
+            const isEmpty = currentLength === 0;
 
-        return () => {clearInterval(ticker)};
-    }, [text]);
+            if (isDeleting) {
+                setText(currentWord.substring(0, currentLength - 1));
+                setDelta(prevDelta => Math.max(50, prevDelta / 2));
+            } else {
+                setText(currentWord.substring(0, currentLength + 1));
+                setDelta(prevDelta => prevDelta + (isFull ? period : 0));
+            }
+
+            if (isFull && !isDeleting) {
+                setIsDeleting(true);
+                setDelta(period);
+            } else if (isEmpty && isDeleting) {
+                setIsDeleting(false);
+                setLoopNum(prevLoopNum => prevLoopNum + 1);
+                setDelta(100);
+                setHeaderImg(roleImages[currentWord]); // Update the image when the word changes
+            }
+        };
+
+        const ticker = setInterval(handleTyping, delta);
+
+        return () => clearInterval(ticker);
+    }, [text, delta, isDeleting, loopNum]);
     
-    const tick = () => {
-        let i = loopNum % toRotate.length;
-        let fulltext = toRotate[i];
-        let updatedText = isDeleting ? fulltext.substring(0, text.length - 1) : fulltext.substring(0, text.length + 1);
-
-        setText(updatedText);
-
-        if (isDeleting) {
-            setDelta(prevDelta => prevDelta/2);
-        } 
-
-        if (!isDeleting && updatedText === fulltext){
-            setIsDeleting(true);
-            setDelta(period);
-        }
-        else if (isDeleting && updatedText === '') {
-            setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            setDelta(500);
-        }
-    }
-
     return(
         <section className="banner" id="home">
             <Container>
                 <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={7}>
+                    <Col xs={12} md={6} xl={8}>
                         <TrackVisibility>
                         {({ isVisible }) =>
                             <div className={isVisible ? 'animate__animated animate__fadeInDown' : ""}>
                                 <span className="tagline">Welcome to my Portfolio!</span>
-                                <h1>{`Hi! I'm Abhijeet `}<span className="wrap">{text}</span></h1>
+                                <h1>{`Hi! I'm Abhijeet `}</h1>
+                                <h1><span className="wrap"> a {text}</span></h1>
                                 <p>Sample text to test my typing speed and to also fill out this section of the page</p>
                                 <div id="button-box">
                                     <button onClick={() => console.log('Connect')}>Connect!<ArrowRightCircle size={25} /> </button>
@@ -62,8 +75,8 @@ export const Banner = () => {
                         }
                         </TrackVisibility>
                     </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Headder Image"/>
+                    <Col xs={12} md={6} xl={4}>
+                        <img src={headerImg} alt="Header"/>
                     </Col>
                 </Row>
             </Container>
