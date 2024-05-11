@@ -95,7 +95,11 @@ nav.navbar.scrolled {
   background-color: #121212;
 }
 nav.navbar a.navbar-brand {
-    width: 9%;
+    width: 5%;
+}
+nav.navbar a.navbar-brand img {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -617,8 +621,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 18px;
 }
 .footer img {
-  margin-top: 70px;
   width: 26%;
+}
+.footer #footer-logo{
+  margin-top: 50px;
 }
 .footer p {
   font-weight: 400;
@@ -627,7 +633,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
-
 .footer .social-icon{
-  margin-top: 20px;
+  display: flex;
+  justify-content: right;
+  align-items:end;
+  margin-top: 70px;
 }
