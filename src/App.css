@@ -114,7 +114,7 @@ span.navbar-text {
     align-items: center;
 }
 .social-icon {
-    display: inline-block;
+    display: flex;
     margin-left: 14px;
 }
 .social-icon a {
@@ -134,7 +134,7 @@ span.navbar-text {
     width: 42px;
     height: 42px;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #57a8f9;
     border-radius: 50%;
     transform: scale(0);
 	transition: 0.3s ease-in-out;
@@ -142,13 +142,21 @@ span.navbar-text {
 .social-icon a:hover::before {
     transform: scale(1);
 }
+.social-icon a #thangs-logo{
+  width: 80%;
+}
 .social-icon a img {
-	width: 40%;
+	width: 50%;
 	z-index: 1;
 	transition: 0.3s ease-in-out;
 }
 .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+  width: 60%;
+}
+.social-icon a:hover #thangs-logo {
+	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+  width: 100%;
 }
 .navbar-text button {
   font-weight: 700;
