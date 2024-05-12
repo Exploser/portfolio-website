@@ -14,6 +14,8 @@
     "express": "^4.19.2",
     "grecaptcha": "^1.0.3",
     "nodemailer": "^6.9.13",
+    "posthog-js": "^1.131.4",
+    "posthog-node": "^4.0.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-bootstrap-icons": "^1.11.4",
