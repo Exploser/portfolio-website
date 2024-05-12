@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Contact = () => {
     const formInitialDetails = {
@@ -13,6 +14,7 @@ export const Contact = () => {
     const [formDetails, setFormDetails] = useState(formInitialDetails);
     const [buttonText, setButtonText] = useState('Send');
     const [status, setStatus] = useState({});
+    const [recaptchaVerified, setRecaptchaVerified] = useState(false);
 
     const onFormUpdate = (category, value) => {
         setFormDetails({
@@ -23,6 +25,12 @@ export const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!recaptchaVerified) {
+            setStatus({ success: false, message: 'Please complete the ReCAPTCHA to submit the form.' });
+            return;
+        };
+
         setButtonText('Sending...');
         try {
             let response = await fetch("http://localhost:5000/contact", {
@@ -32,27 +40,34 @@ export const Contact = () => {
                 },
                 body: JSON.stringify(formDetails),
             });
-    
+
             // Wait for the JSON response to resolve
-            let result = await response.json(); // Add await here
-    
+            let result = await response.json();
             setButtonText("Send");
-            setFormDetails(formInitialDetails); // Reset form details
-    
+            setFormDetails(formInitialDetails);
+            setRecaptchaVerified(false);
+
             // Check the result code
             if (result.code === 200) {
-                setStatus({ success: true, message: 'Message sent successfully'});
+                setStatus({ success: true, message: 'Message sent successfully' });
             } else {
-                setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+                setStatus({ success: false, message: 'Something went wrong, please try again later.' });
             }
         } catch (error) {
             // Handle any errors that occur during the fetch
             console.error('Fetch error:', error);
             setButtonText("Send");
-            setStatus({ success: false, message: 'Failed to send message. Please try again later.'});
+            setStatus({ success: false, message: 'Failed to send message. Please try again later.' });
         }
     };
-    
+
+    const handleRecaptcha = (value) => {
+        if (value) {
+            setRecaptchaVerified(true);
+        } else {
+            setRecaptchaVerified(false);
+        }
+    };
 
     return (
         <section className="contact" id="connect">
@@ -80,20 +95,23 @@ export const Contact = () => {
                                 <Col sm={12} className="px-1">
                                     <textarea row="6" value={formDetails.message} placeholder="message" onChange={(e) => onFormUpdate('message', e.target.value)} />
                                     {
-                                    status.message &&
-                                    <Col sm={6} className="px-1">
-                                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                                    </Col>
+                                        status.message &&
+                                        <Col sm={6} className="px-1">
+                                            <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
+                                        </Col>
                                     }
+                                    <ReCAPTCHA
+                                        sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A'
+                                        onChange={handleRecaptcha}
+                                    />
                                     <button type="submit"><span>{buttonText}</span></button>
                                 </Col>
-                                
                             </Row>
                         </form>
                     </Col>
                 </Row>
             </Container>
         </section>
-        
+
     );
 }
