@@ -10,7 +10,7 @@ export const Projects = () => {
 
     const webProjects = [
         {
-            title: "Tweets Scheduler1",
+            title: "Tweets Scheduler",
             description: "A simple web-app to schedule your tweets",
             builtWith: "Ruby on Rails and Bootstrap.",
             imgUrl:projImg1,
@@ -20,24 +20,28 @@ export const Projects = () => {
             description: "A simple web-app to schedule your tweets",
             builtWith: "Ruby on Rails and Bootstrap.",
             imgUrl:projImg2,
+            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Tweets Scheduler3",
             description: "A simple web-app to schedule your tweets",
             builtWith: "Ruby on Rails and Bootstrap.",
             imgUrl:projImg3,
+            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Tweets Scheduler4",
             description: "A simple web-app to schedule your tweets",
             builtWith: "Ruby on Rails and Bootstrap.",
             imgUrl:projImg3,
+            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Tweets Scheduler5",
             description: "A simple web-app to schedule your tweets",
             builtWith: "Ruby on Rails and Bootstrap.",
             imgUrl:projImg2,
+            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
     ];
 
@@ -46,7 +50,7 @@ export const Projects = () => {
             title: "Tweets Scheduler1",
             description: "A simple web-app to schedule your tweets",
             builtWith: "Ruby on Rails and Bootstrap.",
-            imgUrl:projImg1,
+            imgUrl:projImg3,
         },
         {
             title: "Tweets Scheduler2",
