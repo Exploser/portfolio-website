@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import posthog from 'posthog-js';
-import { PostHogProvider} from 'posthog-js/react'
 import reportWebVitals from './reportWebVitals';
 import { CSPostHogProvider } from './components/Analytics';
 
