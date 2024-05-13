@@ -4,8 +4,18 @@ import projImg3 from "../assets/img/project-img3.png"
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png"
 import TrackVisibility from "react-on-screen";
+
+// Logos
 import railsLogo from "../assets/img/tools/rails-logo.svg";
 import bootstrapLogo from "../assets/img/tools/bootstrap-logo.svg";
+import mongoLogo from "../assets/img/tools/mongo-logo.svg";
+import expressLogo from "../assets/img/tools/express-logo.svg";
+import reactLogo from "../assets/img/tools/react-logo.svg";
+import nodeLogo from "../assets/img/tools/node-js-logo.svg";
+
+import tweetsSchedulerLogo from "../assets/img/project-images/tweets-scheduler-logo.png"
+import exploserBlogsLogo from "../assets/img/project-images/exploser-blogs-logo.svg"
+
 
 export const Projects = () => {
 
@@ -17,18 +27,20 @@ export const Projects = () => {
                 { tech: "Ruby on Rails", img: railsLogo },
                 { tech: "Bootstrap", img: bootstrapLogo }
             ],
-            imgUrl: "https://utfs.io/f/65c1c890-7efd-4e49-87a6-bc51dd8058c8-22r6.PNG",
+            imgUrl:tweetsSchedulerLogo,
             projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Personal Blogs",
             description: "A simple blogs web-app to upload your blogs.",
             builtWith: [
-                { tech: "Ruby on Rails", img: railsLogo },
-                { tech: "Bootstrap", img: bootstrapLogo }
-            ],
-            imgUrl:projImg2,
-            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
+                { tech: "MongoDB", img: mongoLogo },
+                { tech: "Express JS", img: expressLogo },
+                { tech: "React", img: reactLogo },
+                { tech: "Node JS", img: nodeLogo },
+            ],  
+            imgUrl:exploserBlogsLogo,
+            projectUrl: "https://github.com/Exploser/Personal-Blog-Site",
         },
         {
             title: "Tweets Scheduler3",
