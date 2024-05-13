@@ -4,6 +4,8 @@ import projImg3 from "../assets/img/project-img3.png"
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png"
 import TrackVisibility from "react-on-screen";
+import railsLogo from "../assets/img/tools/rails-logo.svg";
+import bootstrapLogo from "../assets/img/tools/bootstrap-logo.svg";
 
 export const Projects = () => {
 
@@ -11,35 +13,50 @@ export const Projects = () => {
         {
             title: "Tweets Scheduler",
             description: "A simple web-app to schedule your tweets",
-            builtWith: "Ruby on Rails and Bootstrap.",
-            imgUrl:"https://utfs.io/f/65c1c890-7efd-4e49-87a6-bc51dd8058c8-22r6.PNG",
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
+            imgUrl: "https://utfs.io/f/65c1c890-7efd-4e49-87a6-bc51dd8058c8-22r6.PNG",
             projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
-            title: "Tweets Scheduler2",
-            description: "A simple web-app to schedule your tweets",
-            builtWith: "Ruby on Rails and Bootstrap.",
+            title: "Personal Blogs",
+            description: "A simple blogs web-app to upload your blogs.",
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
             imgUrl:projImg2,
             projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Tweets Scheduler3",
             description: "A simple web-app to schedule your tweets",
-            builtWith: "Ruby on Rails and Bootstrap.",
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
             imgUrl:projImg3,
             projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Tweets Scheduler4",
             description: "A simple web-app to schedule your tweets",
-            builtWith: "Ruby on Rails and Bootstrap.",
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
             imgUrl:projImg3,
             projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Tweets Scheduler5",
             description: "A simple web-app to schedule your tweets",
-            builtWith: "Ruby on Rails and Bootstrap.",
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
             imgUrl:projImg2,
             projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
@@ -49,13 +66,19 @@ export const Projects = () => {
         {
             title: "Tweets Scheduler1",
             description: "A simple web-app to schedule your tweets",
-            builtWith: "Ruby on Rails and Bootstrap.",
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
             imgUrl:projImg3,
         },
         {
             title: "Tweets Scheduler2",
             description: "A simple web-app to schedule your tweets",
-            builtWith: "Ruby on Rails and Bootstrap.",
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
             imgUrl:projImg2,
         },
     ]
@@ -65,6 +88,10 @@ export const Projects = () => {
             title: "Keep it UP!",
             description: "Keyboard wallmount stand, no screws and no hassel",
             imgUrl:projImg2,
+            builtWith: [
+                { tech: "Ruby on Rails", img: railsLogo },
+                { tech: "Bootstrap", img: bootstrapLogo }
+            ],
         }
     ]
 

@@ -1,4 +1,5 @@
 import { Col } from "react-bootstrap";
+import genericTechLogo from "../assets/img/tools/generic-logo.svg";
 
 export const ProjectCard = ({ title, description, builtWith, imgUrl, projectUrl }) => {
     return (
@@ -10,11 +11,16 @@ export const ProjectCard = ({ title, description, builtWith, imgUrl, projectUrl 
                         <h4>{title}</h4>
                         <span>{description}</span>
                     </div>
-                    <div>
-                        <p><span>{builtWith}</span></p>
-                    </div>
+                </div>
+                <div className="proj-info">
+                    {builtWith.map((tech, index) => (
+                        <div className="image-container" key={index}>
+                            <img src={tech.img || genericTechLogo} alt={tech.tech} />
+                            <div className="tooltip">{tech.tech}</div>
+                        </div>
+                    ))}
                 </div>
             </a>
         </Col>
     );
-}
+};

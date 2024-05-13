@@ -19,7 +19,7 @@ export const Footer = () => {
                             <a href="https://thangs.com/designer/Expl0ser"><img src={thangsIcon} id="thangs-logo" alt="" /></a>
                         </div>
                     </Col>
-                        <p>Footer Text. It's me</p>
+                        <p>Icons provided by <a href="https://iconscout.com/icons/ruby" class="text-underline font-size-sm" target="_blank">Ruby</a> by <a href="https://iconscout.com/contributors/icon-mafia" class="text-underline font-size-sm">Icon Mafia</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a></p>
                 </Row>
             </Container>
         </footer>
