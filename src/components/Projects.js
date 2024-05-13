@@ -1,5 +1,4 @@
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
-import projImg1 from "../assets/img/project-img1.png"
 import projImg2 from "../assets/img/project-img2.png"
 import projImg3 from "../assets/img/project-img3.png"
 import { ProjectCard } from "./ProjectCard";
@@ -13,7 +12,8 @@ export const Projects = () => {
             title: "Tweets Scheduler",
             description: "A simple web-app to schedule your tweets",
             builtWith: "Ruby on Rails and Bootstrap.",
-            imgUrl:projImg1,
+            imgUrl:"https://utfs.io/f/65c1c890-7efd-4e49-87a6-bc51dd8058c8-22r6.PNG",
+            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
         {
             title: "Tweets Scheduler2",
