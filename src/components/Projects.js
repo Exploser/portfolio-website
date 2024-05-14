@@ -1,6 +1,4 @@
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
-import projImg2 from "../assets/img/project-img2.png"
-import projImg3 from "../assets/img/project-img3.png"
 import { ProjectCard } from "./ProjectCard";
 import colorSharp2 from "../assets/img/color-sharp2.png"
 import TrackVisibility from "react-on-screen";
@@ -99,7 +97,7 @@ export const Projects = () => {
                                                 <Nav.Link eventKey="projects-3">3D Models</Nav.Link>
                                             </Nav.Item>
                                         </Nav>
-                                        <Tab.Content>
+                                        <Tab.Content className="">
                                             <Tab.Pane eventKey="projects-1">
                                                 <Row>
                                                     {

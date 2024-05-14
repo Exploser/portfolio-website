@@ -1,9 +1,11 @@
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import neovimTool from "../assets/img/tech/neovim-logo.svg";
+import githubTool from "../assets/img/tech/github-logo.svg";
+import androidStudioTool from "../assets/img/tech/google-android-logo.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import { isVisible } from "@testing-library/user-event/dist/utils";
+import TrackVisibility from "react-on-screen";
 
 export const Skills = () => {
 
@@ -32,25 +34,27 @@ export const Skills = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                    <div className='skill-bx wow zoomIn'>
+                      <TrackVisibility>
+                      {({ isVisible }) =>
+                        <div className={isVisible? "skills-txt animate__animated animate__rubberBand" : ""}>
+                          <h2>Tools</h2>
+                          <p>I am proficient with a range of essential tools and continuously seek out new technologies to stay ahead in my field.</p>
+                        </div>
+                      }
+                      </TrackVisibility>
+                        <Carousel responsive={responsive} infinite={true} className={ isVisible ?  "owl-carousel owl-theme skill-slider animate__animated animate__fadeInDown" : ""}>
                             <div className="item">
-                                <img src={meter1} alt="Skill meter 1" />
-                                <h5>Web Development</h5>
+                                <img src={neovimTool} alt="Neovim" />
+                                <h5>Neovim</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Skill meter 2" />
-                                <h5>Brand Identity</h5>
+                                <img src={githubTool} alt="GitHub" />
+                                <h5>GitHub</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Skill meter 3" />
-                                <h5>Logo Design</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Skill meter 4" />
-                                <h5>Web Development</h5>
+                                <img src={androidStudioTool} alt="Google Android Studio" />
+                                <h5>Google Android Studio</h5>
                             </div>
                         </Carousel>
                     </div>
