@@ -74,6 +74,7 @@ export const Projects = () => {
 
     return (
         <section className="project" id="project">
+            <div className="scrolling-background">
             <Container>
                 <Row>
                     <Col>
@@ -142,10 +143,10 @@ export const Projects = () => {
                                             </Tab.Pane>
                                         </Tab.Content>
                                     </Tab.Container>
-                                
                     </Col>
                 </Row>
             </Container>
+            </div>[]
             <img className="background-image-right" src={colorSharp2} alt="Background"></img>
         </section>
     );

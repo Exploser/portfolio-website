@@ -100,10 +100,7 @@ export const Contact = () => {
                                             <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
                                         </Col>
                                     }
-                                    <ReCAPTCHA
-                                        sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A'
-                                        onChange={handleRecaptcha}
-                                    />
+                                    <ReCAPTCHA sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A' onChange={handleRecaptcha} />
                                     <button type="submit"><span>{buttonText}</span></button>
                                 </Col>
                             </Row>

@@ -58,28 +58,30 @@ export const Banner = () => {
     
     return(
         <section className="banner" id="home">
-            <Container>
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} xl={8}>
-                        <TrackVisibility>
-                            <div className={'animate__animated animate__lightSpeedInLeft'}>
-                                <span className="tagline">Welcome to my Portfolio!</span>
-                                <h1>{`Hi! I'm Abhijeet `}</h1>
-                                <h1><span className="wrap profile-txt"> a {text}</span></h1>
-                                <p>Specializing in writing clean, decoupled, and testable code. Skilled in Object-Oriented Programming and versed in Agile and SCRUM methodologies. Committed to continuous learning.</p>
-                                <a href="#connect" style={{ textDecoration: 'none' }}>
-                                    <div id="button-box">
-                                        <button>Connect!<ArrowRightCircle size={25} /> </button>
-                                    </div>
-                                </a>
-                            </div>
-                        </TrackVisibility>
-                    </Col>
-                    <Col xs={12} md={6} xl={4}>
-                        <img src={headerImg} alt="Header"/>
-                    </Col>
-                </Row>
-            </Container>
+            <div className="scrolling-background">
+                <Container>
+                    <Row className="align-items-center">
+                        <Col xs={12} md={6} xl={8}>
+                            <TrackVisibility>
+                                <div className={'animate__animated animate__lightSpeedInLeft banner-txt'}>
+                                    <span className="tagline">Welcome to my Portfolio!</span>
+                                    <h1>{`Hi! I'm Abhijeet `}</h1>
+                                    <h1><span className="wrap profile-txt"> a {text}</span></h1>
+                                    <p>Specializing in writing clean, decoupled, and testable code. Skilled in Object-Oriented Programming and versed in Agile and SCRUM methodologies. Committed to continuous learning.</p>
+                                    <a href="#connect" style={{ textDecoration: 'none' }}>
+                                        <div id="button-box">
+                                            <button>Connect!<ArrowRightCircle size={25} /> </button>
+                                        </div>
+                                    </a>
+                                </div>
+                            </TrackVisibility>
+                        </Col>
+                        <Col xs={12} md={6} xl={4}>
+                            <img src={headerImg} alt="Header"/>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </section>
     );
 }
