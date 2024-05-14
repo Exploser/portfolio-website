@@ -67,9 +67,11 @@ export const Banner = () => {
                                 <h1>{`Hi! I'm Abhijeet `}</h1>
                                 <h1><span className="wrap profile-txt"> a {text}</span></h1>
                                 <p>Specializing in writing clean, decoupled, and testable code. Skilled in Object-Oriented Programming and versed in Agile and SCRUM methodologies. Committed to continuous learning.</p>
-                                <div id="button-box">
-                                    <button onClick={() => console.log('Connect')}>Connect!<ArrowRightCircle size={25} /> </button>
-                                </div>
+                                <a href="#connect" style={{ textDecoration: 'none' }}>
+                                    <div id="button-box">
+                                        <button>Connect!<ArrowRightCircle size={25} /> </button>
+                                    </div>
+                                </a>
                             </div>
                         </TrackVisibility>
                     </Col>

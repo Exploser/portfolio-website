@@ -81,7 +81,7 @@ export const Projects = () => {
                             {({ isVisible }) =>
                                 <div className={isVisible ? 'animate__animated animate__rubberBand' : ""}>
                                     <h2>Projects</h2>
-                                    <p>This is another typing test cause my Lorem aint working can't be bother to fix it sory I will fix it when I am done with the project I promise. ;)</p>
+                                    <p>These are some of my best projects in whatever I love doing.</p>
                                 </div>
                             }
                         </TrackVisibility>
