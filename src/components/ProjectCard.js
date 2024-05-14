@@ -12,6 +12,7 @@ export const ProjectCard = ({ title, description, builtWith, imgUrl, projectUrl 
                         <span>{description}</span>
                     </div>
                 </div>
+            </a>
                 <div className="proj-info">
                     {builtWith.map((tech, index) => (
                         <div className="image-container" key={index}>
@@ -20,7 +21,6 @@ export const ProjectCard = ({ title, description, builtWith, imgUrl, projectUrl 
                         </div>
                     ))}
                 </div>
-            </a>
         </Col>
     );
 };

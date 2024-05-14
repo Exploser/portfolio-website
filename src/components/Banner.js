@@ -62,17 +62,15 @@ export const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={8}>
                         <TrackVisibility>
-                        {({ isVisible }) =>
-                            <div className={isVisible ? 'animate__animated animate__fadeInDown' : ""}>
+                            <div className={'animate__animated animate__lightSpeedInLeft'}>
                                 <span className="tagline">Welcome to my Portfolio!</span>
                                 <h1>{`Hi! I'm Abhijeet `}</h1>
-                                <h1><span className="wrap"> a {text}</span></h1>
-                                <p>Sample text to test my typing speed and to also fill out this section of the page</p>
+                                <h1><span className="wrap profile-txt"> a {text}</span></h1>
+                                <p>Specializing in writing clean, decoupled, and testable code. Skilled in Object-Oriented Programming and versed in Agile and SCRUM methodologies. Committed to continuous learning.</p>
                                 <div id="button-box">
                                     <button onClick={() => console.log('Connect')}>Connect!<ArrowRightCircle size={25} /> </button>
                                 </div>
                             </div>
-                        }
                         </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={4}>

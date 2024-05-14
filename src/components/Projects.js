@@ -12,9 +12,14 @@ import mongoLogo from "../assets/img/tools/mongo-logo.svg";
 import expressLogo from "../assets/img/tools/express-logo.svg";
 import reactLogo from "../assets/img/tools/react-logo.svg";
 import nodeLogo from "../assets/img/tools/node-js-logo.svg";
+import gamemakerStudioLogo from "../assets/img/tools/gamemaker2-logo.svg";
+import itchIOLogo from "../assets/img/tools/itch-io-logo.svg";
+import fusion360Logo from "../assets/img/tools/autodesk-fusion-360-logo.png";
 
-import tweetsSchedulerLogo from "../assets/img/project-images/tweets-scheduler-logo.png"
-import exploserBlogsLogo from "../assets/img/project-images/exploser-blogs-logo.svg"
+import tweetsSchedulerLogo from "../assets/img/project-images/tweets-scheduler-logo.png";
+import exploserBlogsLogo from "../assets/img/project-images/exploser-blogs-logo.svg";
+import spaceAsteroidsLogo from "../assets/img/project-images/space-astroid-logo.png";
+import keepItUpLogo from "../assets/img/project-images/keep-it-up-logo.jpeg";
 
 
 export const Projects = () => {
@@ -42,56 +47,18 @@ export const Projects = () => {
             imgUrl:exploserBlogsLogo,
             projectUrl: "https://github.com/Exploser/Personal-Blog-Site",
         },
-        {
-            title: "Tweets Scheduler3",
-            description: "A simple web-app to schedule your tweets",
-            builtWith: [
-                { tech: "Ruby on Rails", img: railsLogo },
-                { tech: "Bootstrap", img: bootstrapLogo }
-            ],
-            imgUrl:projImg3,
-            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
-        },
-        {
-            title: "Tweets Scheduler4",
-            description: "A simple web-app to schedule your tweets",
-            builtWith: [
-                { tech: "Ruby on Rails", img: railsLogo },
-                { tech: "Bootstrap", img: bootstrapLogo }
-            ],
-            imgUrl:projImg3,
-            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
-        },
-        {
-            title: "Tweets Scheduler5",
-            description: "A simple web-app to schedule your tweets",
-            builtWith: [
-                { tech: "Ruby on Rails", img: railsLogo },
-                { tech: "Bootstrap", img: bootstrapLogo }
-            ],
-            imgUrl:projImg2,
-            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
-        },
     ];
 
     const otherProjects = [
         {
-            title: "Tweets Scheduler1",
-            description: "A simple web-app to schedule your tweets",
+            title: "Space Astroid",
+            description: "Good old space arcade game clone",
             builtWith: [
-                { tech: "Ruby on Rails", img: railsLogo },
-                { tech: "Bootstrap", img: bootstrapLogo }
+                { tech: "Gamemaker Studio 2", img: gamemakerStudioLogo },
+                { tech: "Available on Itch.io", img: itchIOLogo }
             ],
-            imgUrl:projImg3,
-        },
-        {
-            title: "Tweets Scheduler2",
-            description: "A simple web-app to schedule your tweets",
-            builtWith: [
-                { tech: "Ruby on Rails", img: railsLogo },
-                { tech: "Bootstrap", img: bootstrapLogo }
-            ],
-            imgUrl:projImg2,
+            imgUrl:spaceAsteroidsLogo,
+            projectUrl: "https://github.com/Exploser/Posts-Scheduler",
         },
     ]
 
@@ -99,11 +66,11 @@ export const Projects = () => {
         {
             title: "Keep it UP!",
             description: "Keyboard wallmount stand, no screws and no hassel",
-            imgUrl:projImg2,
+            imgUrl:keepItUpLogo,
             builtWith: [
-                { tech: "Ruby on Rails", img: railsLogo },
-                { tech: "Bootstrap", img: bootstrapLogo }
+                { tech: "Fusion360", img: fusion360Logo },
             ],
+            projectUrl: "https://than.gs/m/1056436",
         }
     ]
 
@@ -114,7 +81,7 @@ export const Projects = () => {
                     <Col>
                         <TrackVisibility partialVisibility>
                             {({ isVisible }) =>
-                                <div className={isVisible ? 'animate__animated animate__bounce' : ""}>
+                                <div className={isVisible ? 'animate__animated animate__rubberBand' : ""}>
                                     <h2>Projects</h2>
                                     <p>This is another typing test cause my Lorem aint working can't be bother to fix it sory I will fix it when I am done with the project I promise. ;)</p>
                                 </div>
