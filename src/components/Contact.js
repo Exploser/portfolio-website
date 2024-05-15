@@ -36,12 +36,18 @@ export const Contact = () => {
         const recaptchaToken = recaptchaRef.current.getValue();
 
         try {
-            let response = await fetch("https://exploser.info/api/contact", {
+            let response = await fetch("http://localhost:4000/send-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ ...formDetails, recaptchaToken }),
+                body: JSON.stringify({ 
+                    firstName: formDetails.firstName,
+                    lastName: formDetails.lastName,
+                    email: formDetails.email,
+                    message: formDetails.message,
+                    phone: formDetails.phone
+                 }),
             });
 
             let result = await response.json();
