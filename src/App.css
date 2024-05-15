@@ -522,6 +522,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 24px;
   .image-container{
     background: rgba(125,97,87,0.5);
     padding: 2px;
