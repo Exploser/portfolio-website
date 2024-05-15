@@ -40,6 +40,7 @@ export const Contact = () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    'Accept': 'application/json',
                 },
                 body: JSON.stringify({ 
                     firstName: formDetails.firstName,
@@ -48,6 +49,7 @@ export const Contact = () => {
                     message: formDetails.message,
                     phone: formDetails.phone
                  }),
+                 credentials: 'include',
             });
 
             let result = await response.json();
