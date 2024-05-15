@@ -32,6 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "start-server": "node src/server/contact.js",
+    "build-server": "babel src/server --out-dir dist/server",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
