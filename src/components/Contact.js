@@ -74,9 +74,13 @@ export const Contact = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col md={6}>
-                        <img src={contactImg} alt="Contact Me" />
+                        <div className="contact-side-1">
+                            <img src={contactImg} alt="Contact Me" />
+                            <p>Hey thanks for visting my website, I don't use any social media apps on the daily. So, the best way to reach me would be through an emails.</p>
+                        </div>
                     </Col>
                     <Col md={6}>
+                        
                         <h2>Get In Touch</h2>
                         <form onSubmit={handleSubmit}>
                             <Row>
