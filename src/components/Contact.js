@@ -36,7 +36,7 @@ export const Contact = () => {
         const recaptchaToken = recaptchaRef.current.getValue();
 
         try {
-            let response = await fetch("http://localhost:4000/send-email", {
+            let response = await fetch("https://personal-blog-api-two.vercel.app/send-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
