@@ -36,12 +36,20 @@ export const Contact = () => {
         const recaptchaToken = recaptchaRef.current.getValue();
 
         try {
-            let response = await fetch("https://exploser.info/api/contact", {
+            let response = await fetch("https://personal-blog-api-two.vercel.app/send-email", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    'Accept': 'application/json',
                 },
-                body: JSON.stringify({...formDetails, recaptchaToken}),
+                body: JSON.stringify({ 
+                    firstName: formDetails.firstName,
+                    lastName: formDetails.lastName,
+                    email: formDetails.email,
+                    message: formDetails.message,
+                    phone: formDetails.phone
+                 }),
+                 credentials: 'include',
             });
 
             let result = await response.json();
@@ -83,25 +91,27 @@ export const Contact = () => {
                         <h2>Get In Touch</h2>
                         <form onSubmit={handleSubmit}>
                             <Row>
-                                    <Col sm={6} className="px-1">
-                                        <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-                                    </Col>
-                                    <Col sm={6} className="px-1">
-                                        <input type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
-                                    </Col>
-                                    <Col sm={6} className="px-1">
-                                        <input type="email" value={formDetails.email} placeholder="Email" onChange={(e) => onFormUpdate('email', e.target.value)} />
-                                    </Col>
-                                    <Col sm={6} className="px-1">
-                                        <input type="tel" value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
-                                    </Col>
-                                    <Col sm={12} className="px-1">
-                                        <textarea rows="4" value={formDetails.message} placeholder="message" onChange={(e) => onFormUpdate('message', e.target.value)} />
-                                    </Col>
-                                </Row>
-                            <ReCAPTCHA ref={recaptchaRef} sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A' onChange={handleRecaptcha} />
-                            <button type="submit" disabled={isSubmitting}><span>{buttonText}</span></button>
-                            {status.message && <span className={`message ${status.success ? "success status-txt" : "danger status-txt"}`}>{status.message}</span>}
+                                <Col sm={6} className="px-1">
+                                    <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                                </Col>
+                                <Col sm={6} className="px-1">
+                                    <input type="text" value={formDetails.lastName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)} />
+                                </Col>
+                                <Col sm={6} className="px-1">
+                                    <input type="email" value={formDetails.email} placeholder="Email" onChange={(e) => onFormUpdate('email', e.target.value)} />
+                                </Col>
+                                <Col sm={6} className="px-1">
+                                    <input type="tel" value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                                </Col>
+                                <Col sm={12} className="px-1">
+                                    <textarea rows="4" value={formDetails.message} placeholder="message" onChange={(e) => onFormUpdate('message', e.target.value)} />
+                                    {status.message && <span className={`message ${status.success ? "success status-txt" : "danger status-txt"}`}>{status.message}</span>}
+                                </Col>
+                            </Row>
+                            <div className="google-recaptcha">
+                                <ReCAPTCHA ref={recaptchaRef} sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A' onChange={handleRecaptcha} />
+                                <button type="submit" disabled={isSubmitting}><span>{buttonText}</span></button>
+                            </div>
                         </form>
                     </Col>
                 </Row>
