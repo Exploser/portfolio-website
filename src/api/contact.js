@@ -13,9 +13,19 @@ const contactEmail = nodemailer.createTransport({
 });
 
 module.exports = async (req, res) => {
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Origin', 'https://exploser.info');  // Adjust this to match your frontend domain in production
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Handle pre-flight requests for CORS
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     if (req.method === 'POST') {
         const { firstName, lastName, email, message, phone } = req.body;
-        const name = firstName + lastName;
+        const name = `${firstName} ${lastName}`; // Added a space between first and last name
         const mail = {
             from: name,
             to: process.env.EMAIL_USER,
