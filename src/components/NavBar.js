@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../assets/img/logo.svg'
-import linkedinIcon from '../assets/img/nav-icon1.svg'
-import githubIcon from '../assets/img/nav-icon2.svg'
-import thangsIcon from '../assets/img/nav-icon3.svg'
+import logo from '../assets/img/logo.svg';
+import logoLoop from '../assets/img/logo-loop.gif';
+import linkedinIcon from '../assets/img/nav-icon1.svg';
+import githubIcon from '../assets/img/nav-icon2.svg';
+import thangsIcon from '../assets/img/nav-icon3.svg';
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
+    const [logoSrc, setLogoSrc] = useState(logo);
 
     const onUpdateActiveLink = (value) => {
         setActiveLink(value);
@@ -25,15 +27,23 @@ export const NavBar = () => {
         }
 
         window.addEventListener("scroll", onScroll);
-
         return () => window.removeEventListener("scroll", onScroll);
-    }, [])
+    }, []);
+
+    // Define the handlers for mouse enter and leave
+    const handleMouseEnter = () => setLogoSrc(logoLoop);
+    const handleMouseLeave = () => setLogoSrc(logo);
 
     return (
         <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
             <Container>
                 <Navbar.Brand href="/">
-                    <img src={logo} alt="Logo" />
+                    <img 
+                        src={logoSrc} 
+                        alt="Logo"
+                        onMouseEnter={handleMouseEnter} 
+                        onMouseLeave={handleMouseLeave}
+                    />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav">
                     <span className="navbar-toggler-icon"></span>
@@ -42,7 +52,7 @@ export const NavBar = () => {
                     <Nav className="ms-auto">
                         <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
                         <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-                        <Nav.Link href="#project" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+                        <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
