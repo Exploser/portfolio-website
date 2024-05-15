@@ -793,7 +793,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
-  margin-top: 25px;
+  margin-top: 10px;
   margin-left: 10px;
   padding: 14px 48px;
   position: relative;
@@ -843,6 +843,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 
+.contact form .status-txt{
+  padding: 5px;
+  margin-left: 5px;
+  background: rgba(125,97,87,0.5);
+}
+.contact form .google-recaptcha{
+  margin-top: 10px;
+  margin-left: 5px;
+}
 
 /************ Footer Css ************/
 .footer {

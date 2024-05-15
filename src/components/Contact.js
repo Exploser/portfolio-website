@@ -33,7 +33,7 @@ export const Contact = () => {
 
         setButtonText('Sending...');
         try {
-            let response = await fetch("http://localhost:5000/contact", {
+            let response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "Application/json;charset=utf-8",
@@ -76,7 +76,7 @@ export const Contact = () => {
                     <Col md={6}>
                         <div className="contact-side-1">
                             <img src={contactImg} alt="Contact Me" />
-                            <p>Hey thanks for visting my website, I don't use any social media apps on the daily. So, the best way to reach me would be through an emails.</p>
+                            <p>Hey thanks for visting my website, I don't use any social media apps on the daily. So, the best way to reach me would be through an emails. Just fill the form and hit send!!!</p>
                         </div>
                     </Col>
                     <Col md={6}>
@@ -94,17 +94,17 @@ export const Contact = () => {
                                     <input type="email" value={formDetails.email} placeholder="Email" onChange={(e) => onFormUpdate('email', e.target.value)} />
                                 </Col>
                                 <Col sm={6} className="px-1">
-                                    <input type="tel" value={formDetails.tel} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                                    <input type="tel" value={formDetails.phone} placeholder="Phone" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                                 </Col>
                                 <Col sm={12} className="px-1">
-                                    <textarea row="6" value={formDetails.message} placeholder="message" onChange={(e) => onFormUpdate('message', e.target.value)} />
+                                    <textarea rows="4" value={formDetails.message} placeholder="message" onChange={(e) => onFormUpdate('message', e.target.value)} />
                                     {
                                         status.message &&
-                                        <Col sm={6} className="px-1">
-                                            <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                                        </Col>
+                                        <span className={`message ${status.success ? "success status-txt" : "danger status-txt"}`}>{status.message}</span>
                                     }
-                                    <ReCAPTCHA sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A' onChange={handleRecaptcha} />
+                                    <div className="google-recaptcha">
+                                        <ReCAPTCHA sitekey='6Lcv5dkpAAAAAOomniJd_ADIv7GQKkI4U9UlML3A' onChange={handleRecaptcha} />
+                                    </div>
                                     <button type="submit"><span>{buttonText}</span></button>
                                 </Col>
                             </Row>
