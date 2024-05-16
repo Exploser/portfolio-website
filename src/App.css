@@ -47,6 +47,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   line-height: normal;
 }
+p {
+  background: rgba(125,97,87,0.5);
+  border-radius: 10px;
+}
 
 p, a, li, button, ul {
   margin: 0;
@@ -300,23 +304,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   line-height: 1;
   margin-bottom: 20px;
   display: block;
-  text-shadow: 
-    0 .005em 0 #ccc, 
-    0 .01em 0 #c9c9c9, 
-    0 .015em 0 #bbb, 
-    0 .02em 0 #b9b9b9, 
-    0 .025em 0 #aaa, 
-    0 .03em .005em rgba(0,0,0,.1), 
-    0 0 .025em rgba(0,0,0,.1), 
-    0 .005em .015em rgba(0,0,0,.3), 
-    0 .015em .025em rgba(0,0,0,.2), 
-    0 .025em .05em rgba(0,0,0,.25), 
-    0 .05em .05em rgba(0,0,0,.2), 
-    0 .1em .1em rgba(0,0,0,.15);
 }
 .banner p {
   color: var(--text-color);
-  background: rgba(125,97,87,0.5);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -448,7 +438,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .skill p {
     color: var(--text-color);
-    background: rgba(125,97,87,0.5);
     font-size: 18px;
     max-width: 500px;
     letter-spacing: 0.8px;
@@ -871,6 +860,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 14px;
   color: #B8B8B8;
   letter-spacing: 0.5px;
+  background: none;
 }
 .footer .social-icon{
   display: flex;
